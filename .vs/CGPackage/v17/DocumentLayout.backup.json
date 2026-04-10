@@ -1,12 +1,105 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Semster 8\\CGUI-master\\",
-  "Documents": [],
+  "WorkspaceRootPath": "D:\\Projects\\Semster 8\\CGUI-master edited\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5CB99923-BEA8-42FB-8B29-B117E2221958}|CGAlgorithms\\CGAlgorithms.csproj|d:\\projects\\semster 8\\cgui-master edited\\cgalgorithms\\algorithms\\convexhull\\extremesegments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CB99923-BEA8-42FB-8B29-B117E2221958}|CGAlgorithms\\CGAlgorithms.csproj|solutionrelative:cgalgorithms\\algorithms\\convexhull\\extremesegments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CB99923-BEA8-42FB-8B29-B117E2221958}|CGAlgorithms\\CGAlgorithms.csproj|d:\\projects\\semster 8\\cgui-master edited\\cgalgorithms\\algorithms\\convexhull\\extremepoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CB99923-BEA8-42FB-8B29-B117E2221958}|CGAlgorithms\\CGAlgorithms.csproj|solutionrelative:cgalgorithms\\algorithms\\convexhull\\extremepoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CB99923-BEA8-42FB-8B29-B117E2221958}|CGAlgorithms\\CGAlgorithms.csproj|d:\\projects\\semster 8\\cgui-master edited\\cgalgorithms\\algorithms\\convexhull\\grahamscan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CB99923-BEA8-42FB-8B29-B117E2221958}|CGAlgorithms\\CGAlgorithms.csproj|solutionrelative:cgalgorithms\\algorithms\\convexhull\\grahamscan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CB99923-BEA8-42FB-8B29-B117E2221958}|CGAlgorithms\\CGAlgorithms.csproj|d:\\projects\\semster 8\\cgui-master edited\\cgalgorithms\\algorithms\\convexhull\\jarvismarch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CB99923-BEA8-42FB-8B29-B117E2221958}|CGAlgorithms\\CGAlgorithms.csproj|solutionrelative:cgalgorithms\\algorithms\\convexhull\\jarvismarch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CB99923-BEA8-42FB-8B29-B117E2221958}|CGAlgorithms\\CGAlgorithms.csproj|D:\\Projects\\Semster 8\\CGUI-master edited\\cgalgorithms\\algorithms\\convexhull\\quickhull.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CB99923-BEA8-42FB-8B29-B117E2221958}|CGAlgorithms\\CGAlgorithms.csproj|solutionrelative:cgalgorithms\\algorithms\\convexhull\\quickhull.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ExtremeSegments.cs",
+              "DocumentMoniker": "D:\\Projects\\Semster 8\\CGUI-master edited\\CGAlgorithms\\Algorithms\\ConvexHull\\ExtremeSegments.cs",
+              "RelativeDocumentMoniker": "CGAlgorithms\\Algorithms\\ConvexHull\\ExtremeSegments.cs",
+              "ToolTip": "D:\\Projects\\Semster 8\\CGUI-master edited\\CGAlgorithms\\Algorithms\\ConvexHull\\ExtremeSegments.cs",
+              "RelativeToolTip": "CGAlgorithms\\Algorithms\\ConvexHull\\ExtremeSegments.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T21:43:24.123Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GrahamScan.cs",
+              "DocumentMoniker": "D:\\Projects\\Semster 8\\CGUI-master edited\\CGAlgorithms\\Algorithms\\ConvexHull\\GrahamScan.cs",
+              "RelativeDocumentMoniker": "CGAlgorithms\\Algorithms\\ConvexHull\\GrahamScan.cs",
+              "ToolTip": "D:\\Projects\\Semster 8\\CGUI-master edited\\CGAlgorithms\\Algorithms\\ConvexHull\\GrahamScan.cs",
+              "RelativeToolTip": "CGAlgorithms\\Algorithms\\ConvexHull\\GrahamScan.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAwEQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T21:41:31.869Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "JarvisMarch.cs",
+              "DocumentMoniker": "D:\\Projects\\Semster 8\\CGUI-master edited\\CGAlgorithms\\Algorithms\\ConvexHull\\JarvisMarch.cs",
+              "RelativeDocumentMoniker": "CGAlgorithms\\Algorithms\\ConvexHull\\JarvisMarch.cs",
+              "ToolTip": "D:\\Projects\\Semster 8\\CGUI-master edited\\CGAlgorithms\\Algorithms\\ConvexHull\\JarvisMarch.cs",
+              "RelativeToolTip": "CGAlgorithms\\Algorithms\\ConvexHull\\JarvisMarch.cs",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAxwGwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T21:40:46.344Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "QuickHull.cs",
+              "DocumentMoniker": "D:\\Projects\\Semster 8\\CGUI-master edited\\CGAlgorithms\\Algorithms\\ConvexHull\\QuickHull.cs",
+              "RelativeDocumentMoniker": "CGAlgorithms\\Algorithms\\ConvexHull\\QuickHull.cs",
+              "ToolTip": "D:\\Projects\\Semster 8\\CGUI-master edited\\CGAlgorithms\\Algorithms\\ConvexHull\\QuickHull.cs",
+              "RelativeToolTip": "CGAlgorithms\\Algorithms\\ConvexHull\\QuickHull.cs",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAAAIEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T17:42:38.924Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ExtremePoints.cs",
+              "DocumentMoniker": "D:\\Projects\\Semster 8\\CGUI-master edited\\CGAlgorithms\\Algorithms\\ConvexHull\\ExtremePoints.cs",
+              "RelativeDocumentMoniker": "CGAlgorithms\\Algorithms\\ConvexHull\\ExtremePoints.cs",
+              "ToolTip": "D:\\Projects\\Semster 8\\CGUI-master edited\\CGAlgorithms\\Algorithms\\ConvexHull\\ExtremePoints.cs",
+              "RelativeToolTip": "CGAlgorithms\\Algorithms\\ConvexHull\\ExtremePoints.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAxwFsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T20:56:09.849Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

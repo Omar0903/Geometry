@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\CGAlgorithms",
+    "\\CGAlgorithmsUnitTest",
+    "\\CGAlgorithmsUnitTest\\ConvexHull",
+    "\\CGAlgorithms\\Algorithms",
+    "\\CGAlgorithms\\Algorithms\\ConvexHull"
   ],
-  "SelectedNode": "\\CGPackage.sln",
+  "SelectedNode": "\\CGAlgorithms\\Algorithms\\ConvexHull\\ExtremeSegments.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -10,7 +10,8 @@ namespace CGAlgorithms.Algorithms.ConvexHull
 {
     public class JarvisMarch : Algorithm
     {
-        public override void Run(List<Point> points, List<Line> lines, List<Polygon> polygons, ref List<Point> outPoints, ref List<Line> outLines, ref List<Polygon> outPolygons)
+        public override void Run(List<Point> points, List<Line> lines, List<Polygon> polygons,
+            ref List<Point> outPoints, ref List<Line> outLines, ref List<Polygon> outPolygons)
         {
             if (points.Count == 1)
             {
@@ -99,6 +100,7 @@ namespace CGAlgorithms.Algorithms.ConvexHull
             return (a.X - b.X) * (a.X - b.X) +
                    (a.Y - b.Y) * (a.Y - b.Y);
         }
+
         public override string ToString()
         {
             return "Convex Hull - Jarvis March";

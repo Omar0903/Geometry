@@ -12,66 +12,62 @@ namespace CGAlgorithms.Algorithms.ConvexHull
     {
         public override void Run(List<Point> points, List<Line> lines, List<Polygon> polygons, ref List<Point> outPoints, ref List<Line> outLines, ref List<Polygon> outPolygons)
         {
+            if (points.Count == 0) return;
+
+            if (points.Count == 1)
             {
-                if (points.Count == 0) return;
+                outPoints.Add(points[0]);
+                return;
+            }
 
-                if (points.Count == 1)
-                {
-                    outPoints.Add(points[0]);
-                    return;
-                }
+            if (points.Count == 2)
+            {
+                outPoints.Add(points[0]);
+                outPoints.Add(points[1]);
+                outLines.Add(new Line(points[0], points[1]));
+                return;
+            }
 
-                if (points.Count == 2)
-                {
-                    outPoints.Add(points[0]);
-                    outPoints.Add(points[1]);
-                    outLines.Add(new Line(points[0], points[1]));
-                    return;
-                }
+            Point minX = points[0];
+            Point maxX = points[0];
 
-                // find leftmost and rightmost
-                Point minX = points[0];
-                Point maxX = points[0];
+            foreach (var p in points)
+            {
+                if (p.X < minX.X)
+                    minX = p;
 
-                foreach (var p in points)
-                {
-                    if (p.X < minX.X)
-                        minX = p;
+                if (p.X > maxX.X)
+                    maxX = p;
+            }
 
-                    if (p.X > maxX.X)
-                        maxX = p;
-                }
+            outPoints.Add(minX);
+            outPoints.Add(maxX);
 
-                outPoints.Add(minX);
-                outPoints.Add(maxX);
+            List<Point> leftSet = new List<Point>();
+            List<Point> rightSet = new List<Point>();
 
-                List<Point> leftSet = new List<Point>();
-                List<Point> rightSet = new List<Point>();
+            Line baseLine = new Line(minX, maxX);
 
-                Line baseLine = new Line(minX, maxX);
+            foreach (var p in points)
+            {
+                if (p.Equals(minX) || p.Equals(maxX)) continue;
 
-                foreach (var p in points)
-                {
-                    if (p.Equals(minX) || p.Equals(maxX)) continue;
+                var turn = HelperMethods.CheckTurn(baseLine, p);
 
-                    var turn = HelperMethods.CheckTurn(baseLine, p);
+                if (turn == TurnType.Left)
+                    leftSet.Add(p);
+                else if (turn == TurnType.Right)
+                    rightSet.Add(p);
+            }
 
-                    if (turn == TurnType.Left)
-                        leftSet.Add(p);
-                    else if (turn == TurnType.Right)
-                        rightSet.Add(p);
-                }
+            FindHull(minX, maxX, leftSet, outPoints);
+            FindHull(maxX, minX, rightSet, outPoints);
 
-                FindHull(minX, maxX, leftSet, outPoints);
-                FindHull(maxX, minX, rightSet, outPoints);
-
-                // create hull lines
-                for (int i = 0; i < outPoints.Count; i++)
-                {
-                    Point a = outPoints[i];
-                    Point b = outPoints[(i + 1) % outPoints.Count];
-                    outLines.Add(new Line(a, b));
-                }
+            for (int i = 0; i < outPoints.Count; i++)
+            {
+                Point a = outPoints[i];
+                Point b = outPoints[(i + 1) % outPoints.Count];
+                outLines.Add(new Line(a, b));
             }
 
             void FindHull(Point a, Point b, List<Point> set, List<Point> hull)
@@ -124,7 +120,6 @@ namespace CGAlgorithms.Algorithms.ConvexHull
                 return Math.Abs((b.X - a.X) * (a.Y - p.Y) -
                                 (a.X - p.X) * (b.Y - a.Y));
             }
-
         }
 
         public override string ToString()
