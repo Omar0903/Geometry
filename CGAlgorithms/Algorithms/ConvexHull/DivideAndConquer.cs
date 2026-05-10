@@ -2,15 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CGAlgorithms.Algorithms.ConvexHull
 {
     public class DivideAndConquer : Algorithm
     {
-        public override void Run(List<Point> points, List<Line> lines, List<Polygon> polygons,
-     ref List<Point> outPoints, ref List<Line> outLines, ref List<Polygon> outPolygons)
+        public override void Run( List<Point> points, List<Line> lines,List<Polygon> polygons,ref
+            List<Point> outPoints, ref List<Line> outLines,ref List<Polygon> outPolygons)
         {
             if (points == null || points.Count == 0)
             {
@@ -18,31 +16,73 @@ namespace CGAlgorithms.Algorithms.ConvexHull
                 return;
             }
 
-            List<Point> pts = points.Distinct().ToList();
+            List<Point> pts = points.Distinct().OrderBy(p => p.X).ThenBy(p => p.Y).ToList();
 
+            outPoints = DivideHull(pts);
+        }
+
+        private List<Point> DivideHull(List<Point> pts)
+        {
+            // Base case
             if (pts.Count <= 3)
-            {
-                outPoints = pts;
-                return;
-            }
+                return ComputeSmallHull(pts);
 
-            // Sort by X then Y
-            pts = pts.OrderBy(p => p.X).ThenBy(p => p.Y).ToList();
+            int mid = pts.Count / 2;
+
+            List<Point> left = pts.Take(mid).ToList();
+            List<Point> right = pts.Skip(mid).ToList();
+
+            // Conquer recursively
+            List<Point> leftHull = DivideHull(left);
+            List<Point> rightHull = DivideHull(right);
+
+            // Merge
+            return MergeHulls(leftHull, rightHull);
+        }
+
+        private List<Point> ComputeSmallHull(List<Point> pts)
+        {
+            pts = pts.Distinct().OrderBy(p => p.X).ThenBy(p => p.Y).ToList();
+
+            if (pts.Count <= 2)
+                return pts;
+
+            var turn = HelperMethods.CheckTurn(
+                new Line(pts[0], pts[1]),
+                pts[2]);
+
+            if (turn == Enums.TurnType.Colinear)
+                return new List<Point> { pts[0], pts[2] };
+
+            return pts;
+        }
+
+        private List<Point> MergeHulls(List<Point> leftHull, List<Point> rightHull)
+        {
+            List<Point> allPoints = leftHull
+                .Concat(rightHull)
+                .Distinct()
+                .OrderBy(p => p.X)
+                .ThenBy(p => p.Y)
+                .ToList();
+
+            return MonotoneHull(allPoints);
+        }
+
+        private List<Point> MonotoneHull(List<Point> pts)
+        {
+            if (pts.Count <= 3)
+                return pts;
 
             List<Point> lower = new List<Point>();
             foreach (var p in pts)
             {
-                while (lower.Count >= 2)
-                {
-                    var turn = HelperMethods.CheckTurn(
+                while (lower.Count >= 2 &&
+                    HelperMethods.CheckTurn(
                         new Line(lower[lower.Count - 2], lower[lower.Count - 1]),
-                        p
-                    );
-
-                    if (turn != Enums.TurnType.Left)
-                        lower.RemoveAt(lower.Count - 1);
-                    else
-                        break;
+                        p) != Enums.TurnType.Left)
+                {
+                    lower.RemoveAt(lower.Count - 1);
                 }
                 lower.Add(p);
             }
@@ -50,33 +90,26 @@ namespace CGAlgorithms.Algorithms.ConvexHull
             List<Point> upper = new List<Point>();
             for (int i = pts.Count - 1; i >= 0; i--)
             {
-                var p = pts[i];
-                while (upper.Count >= 2)
-                {
-                    var turn = HelperMethods.CheckTurn(
+                Point p = pts[i];
+                while (upper.Count >= 2 &&
+                    HelperMethods.CheckTurn(
                         new Line(upper[upper.Count - 2], upper[upper.Count - 1]),
-                        p
-                    );
-
-                    if (turn != Enums.TurnType.Left)
-                        upper.RemoveAt(upper.Count - 1);
-                    else
-                        break;
+                        p) != Enums.TurnType.Left)
+                {
+                    upper.RemoveAt(upper.Count - 1);
                 }
                 upper.Add(p);
             }
 
-            // Remove duplicates
             lower.RemoveAt(lower.Count - 1);
             upper.RemoveAt(upper.Count - 1);
 
-            outPoints = lower.Concat(upper).ToList();
+            return lower.Concat(upper).ToList();
         }
 
         public override string ToString()
         {
             return "Convex Hull - Divide & Conquer";
         }
-
     }
 }
